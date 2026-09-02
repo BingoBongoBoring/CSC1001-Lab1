@@ -3,28 +3,34 @@ import java.nio.charset.StandardCharsets;
 //TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
 // click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
 public class Main {
+    // Removes the asterisk at the beginning and end
     public static String decryptorA(String s) {
         return s.substring(1, s.length() - 1);
     }
 
+    // Swaps the first and last letter
     public static String decryptorB(String s) {
         return s.charAt(s.length() - 1) + s.substring(1, s.length() - 1) + s.charAt(0);
     }
 
+    // removes the 'ay' at the end and moves the last letter to the beginning
     public static String decryptorC(String s) {
         return s.charAt(s.length() - 3) + s.substring(0, s.length() - 3);
     }
 
+    // takes the letter at the end and inserts it in the middle.
     public static String decryptorD(String s) {
         int i = Math.floorDiv(s.length(), 2);
         return s.substring(0, i) + s.charAt(s.length() - 1) + s.substring(i, s.length() - 1);
     }
 
+    // swaps the second and first half, and reverses the original first half
     public static String decryptorLA(String s) {
         int i = Math.ceilDiv(s.length(), 2);
         return s.substring(i, s.length()) + (new StringBuilder(s.substring(0, i))).reverse();
     }
 
+    // ciphers the vowels
     public static String decryptorLB(String s) {
         StringBuilder r = new StringBuilder();
         char[] a = new char[s.length()];
